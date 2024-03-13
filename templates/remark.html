@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remark</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .remark {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .performance {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+        }
+
+        .performance-item {
+            text-align: center;
+        }
+
+        .performance-label {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .performance-value {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Remark</h1>
+        {% if remark %}
+            <p class="remark">{{ remark }}</p>
+            <div class="performance">
+                <div class="performance-item">
+                    <div class="performance-label">Term 1:</div>
+                    <div class="performance-value">{{ term1 }}</div>
+                </div>
+                <div class="performance-item">
+                    <div class="performance-label">Term 2:</div>
+                    <div class="performance-value">{{ term2 }}</div>
+                </div>
+            </div>
+        {% else %}
+            <p>No remark found for the student.</p>
+        {% endif %}
+        <a href="/">Go Back</a>
+    </div>
+</body>
+</html>
