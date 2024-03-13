@@ -1,4 +1,3 @@
-import speech_recognition as sr
 import csv
 import pandas as pd
 from flask import Flask, render_template, request
@@ -9,18 +8,6 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/listen', methods=['POST'])
-def listen():
-    r = sr.Recognizer()
-    with sr.Microphone() as source:
-        print("Listening...")
-        audio = r.listen(source)
-        try:
-            text = r.recognize_google(audio, language='en-in')
-            return text
-        except:
-            print("Sorry could not recognize what you said")
-            return listen()
 
 @app.route('/text_input', methods=['POST'])
 def text_input():
